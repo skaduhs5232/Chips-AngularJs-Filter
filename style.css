@@ -1,0 +1,201 @@
+ .chipsdemoBasicUsage .errors {
+            font-size: 12px;
+            color: #dd2c00;
+            margin-top: 10px;
+        }
+
+        .chipsdemoBasicUsage .demo-long-fruit-input {
+            min-width: 340px;
+        }
+
+        .chipsdemoBasicUsage .custom-chips md-chip {
+            position: relative;
+            padding-right: 24px;
+        }
+
+        .chipsdemoBasicUsage .custom-chips md-chip .md-chip-remove-container {
+            position: absolute;
+            right: 4px;
+            top: 4px;
+            margin-right: 0;
+            height: 26px;
+            display: none;
+        }
+
+        .chipsdemoBasicUsage .custom-chips md-chip .md-chip-remove-container button.demo-remove-vegetable-chip {
+            position: relative;
+            height: 24px;
+            width: 24px;
+            line-height: 30px;
+            background: transparent;
+            border: none;
+            padding: 0;
+        }
+
+        .chipsdemoBasicUsage .custom-chips md-chip .md-chip-remove-container button.demo-remove-vegetable-chip md-icon {
+            transform: translate(0, -3px) scale(0.75);
+            fill: rgba(0, 0, 0, 0.33);
+        }
+
+        .chipsdemoBasicUsage .custom-chips md-chip:hover:not(.md-readonly) .md-chip-remove-container {
+            display: block;
+        }
+
+        .chipsdemoBasicUsage .custom-chips md-chip.md-focused:not(.md-readonly) .md-chip-remove-container {
+            display: block;
+        }
+
+        .chipsdemoBasicUsage .custom-chips md-chip.md-focused:not(.md-readonly) .md-chip-remove-container button.demo-remove-vegetable-chip md-icon {
+            fill: rgba(255, 255, 255, 0.87);
+        }
+
+        #myDropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        #myDropdown a {
+            display: block;
+            text-decoration: none;
+            color: #333; 
+            padding: 10px 15px; 
+            background-color: #f1f1f1; 
+        }
+        
+        
+        #myDropdown a:hover {
+            background-color: #ddd; 
+        }
+        
+        
+        #myDropdown.active {
+            display: block;
+        }
+        
+        
+        #myDropdown {
+            display: none;
+        }
+  
+        .modal {
+            display: none;
+            position: fixed;
+            top: 23.3%;
+            left: 54%;
+            transform: translate(-50%, -50%);
+            width: 219px;
+            height: 175px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            z-index: 1;
+        }
+        
+        .modal-header {
+            background-color: #5aa773;
+            color: #fff;
+            
+            padding: 10px;
+            height: 15%;
+        }
+        
+        .modal-content {
+            text-align: center;
+        }
+        
+        .input-field {
+            border: none;
+            border-bottom: 1px solid #5aa773;
+            width: 90%;
+            padding: 5px;
+            margin: 10px 0;
+        }
+        
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        
+
+        .form__group {
+            position: relative;
+            top: 20px;
+            left: 20px;
+            padding: 20px 0 0;
+            width: 100%;
+            max-width: 180px;
+          }
+          
+          .form__field {
+            font-family: inherit;
+            width: 100%;
+            border: none;
+            border-bottom: 2px solid #9b9b9b;
+            outline: 0;
+            font-size: 17px;
+            color: #0f0f0f;
+            padding: 7px 0;
+            background: transparent;
+            transition: border-color 0.2s;
+          }
+          
+          .form__field::placeholder {
+            color: transparent;
+          }
+          
+          .form__field:placeholder-shown ~ .form__label {
+            font-size: 13px;
+            cursor: text;
+            top: 20px;
+          }
+          
+          .form__label {
+            position: absolute;
+            top: 0;
+            display: block;
+            transition: 0.2s;
+            font-size: 15px;
+            color: #9b9b9b;
+            pointer-events: none;
+          }
+          
+          .form__field:focus {
+            padding-bottom: 6px;
+            font-weight: 500;
+            border-width: 3px;
+            border-image: linear-gradient(to right, #5aa773, #5aa773);
+            border-image-slice: 1;
+          }
+          
+          .form__field:focus ~ .form__label {
+            position: absolute;
+            top: 0;
+            display: block;
+            transition: 0.2s;
+            font-size: 15px;
+            color: #5aa773;
+            font-weight: 700;
+          }
+          
+        
+          .form__field:required, .form__field:invalid {
+            box-shadow: none;
+          }
+          .botaofechar{
+            position: relative;
+            bottom: 110px;
+            left: 70%;
+            background: none;
+            border: none;
+            color: #fff;
+          }
+        .botaoAdd{
+            position: relative;
+            top: 25px;
+            left: 60px;
+            color: #9b9b9b;
+            background: none;
+            border: none;
+        }
+  
