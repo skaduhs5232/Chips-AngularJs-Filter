@@ -3,7 +3,10 @@
 
 <head>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="/node_modules/angular-material/angular-material.css">
+
+
     <style>
         .chipsdemoBasicUsage .errors {
             font-size: 12px;
@@ -60,55 +63,203 @@
             position: relative;
             display: inline-block;
         }
-        
+
         #myDropdown a {
             display: block;
             text-decoration: none;
-            color: #333; 
-            padding: 10px 15px; 
-            background-color: #f1f1f1; 
+            color: #333;
+            padding: 10px 15px;
+            background-color: #f1f1f1;
         }
-        
-        
+
+
         #myDropdown a:hover {
-            background-color: #ddd; 
+            background-color: #ddd;
         }
-        
-        
+
+
         #myDropdown.active {
             display: block;
         }
-        
-        
+
+
         #myDropdown {
             display: none;
         }
-  
-        .modal {
+
+        #DropTipos {
+            position: absolute;
+            display: inline-block;
+        }
+
+        #DropTipos a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            background-color: #f1f1f1;
+            width: 150px;
+        }
+
+
+        #DropTipos a:hover {
+            background-color: #ddd;
+        }
+
+
+        #DropTipos.active {
+            display: block;
+        }
+
+
+        #DropTipos {
+            display: none;
+        }
+
+        #DropCategoria {
+            position: absolute;
+            display: inline-block;
+        }
+
+        #DropCategoria a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            background-color: #f1f1f1;
+            width: 150px;
+        }
+
+
+        #DropCategoria a:hover {
+            background-color: #ddd;
+        }
+
+
+        #DropCategoria.active {
+            display: block;
+        }
+
+
+        #DropCategoria {
+            display: none;
+        }
+
+        .modaal {
             display: none;
             position: fixed;
             top: 23.3%;
-            left: 54%;
+            left: 47%;
             transform: translate(-50%, -50%);
             width: 219px;
             height: 175px;
             border: 1px solid #ccc;
             background-color: #fff;
             z-index: 1;
+            box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
         }
-        
-        .modal-header {
-            background-color: #5aa773;
+
+
+        .modaal-cima {
+            background-color: #455a64;
             color: #fff;
-            
-            padding: 10px;
-            height: 15%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5px;
+            height: 25%;
         }
-        
-        .modal-content {
-            text-align: center;
+
+        .modaal-conteudo {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 60%;
         }
-        
+
+        .modaalCategoria {
+            display: none;
+            position: fixed;
+            top: 23.3%;
+            left: 47%;
+            transform: translate(-50%, -50%);
+            width: auto;
+            height: auto;
+            min-width: 252px;
+            min-height: 173px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            z-index: 1;
+            box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
+        }
+
+        .modaal-cimaCategoria {
+            background-color: #455a64;
+            color: #fff;
+            display: flex;
+            align-items: center;
+
+            justify-content: space-between;
+            padding: 0 5px;
+            height: 40px;
+        }
+
+        .modaal-conteudoCategoria {
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 60%;
+        }
+
+
+        #mymodaal6 {
+            width: 300px;
+            height: 200px;
+
+        }
+
+        #mymodaal5 {
+            display: none;
+            position: fixed;
+            top: 23.3%;
+            left: 56%;
+            transform: translate(-50%, -50%);
+            width: 563px;
+            height: 200px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            z-index: 1;
+            box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
+        }
+
+        .modaal-conteudoStatus {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .modaal-conteudoTipo {
+            margin-left: 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            justify-content: space-around;
+            min-height: 60%;
+            flex-direction: row
+        }
+
+        .botaofechar {
+
+            background: none;
+            border: none;
+            color: #fff;
+        }
+
         .input-field {
             border: none;
             border-bottom: 1px solid #5aa773;
@@ -116,25 +267,35 @@
             padding: 5px;
             margin: 10px 0;
         }
-        
+
         .close {
             position: absolute;
             top: 10px;
             right: 10px;
             cursor: pointer;
         }
-        
+
+        .modalInputData {
+            display: flex;
+            flex-direction: column;
+        }
 
         .form__group {
             position: relative;
-            top: 20px;
-            left: 20px;
-            padding: 20px 0 0;
-            width: 100%;
+
             max-width: 180px;
-          }
-          
-          .form__field {
+        }
+
+
+
+        .form__groupCategoria {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 14px;
+        }
+
+        .form__field {
             font-family: inherit;
             width: 100%;
             border: none;
@@ -145,19 +306,19 @@
             padding: 7px 0;
             background: transparent;
             transition: border-color 0.2s;
-          }
-          
-          .form__field::placeholder {
+        }
+
+        .form__field::placeholder {
             color: transparent;
-          }
-          
-          .form__field:placeholder-shown ~ .form__label {
+        }
+
+        .form__field:placeholder-shown~.form__label {
             font-size: 13px;
             cursor: text;
-            top: 20px;
-          }
-          
-          .form__label {
+            top: 10px;
+        }
+
+        .form__label {
             position: absolute;
             top: 0;
             display: block;
@@ -165,48 +326,113 @@
             font-size: 15px;
             color: #9b9b9b;
             pointer-events: none;
-          }
-          
-          .form__field:focus {
+        }
+
+        .form__field:focus {
+
             padding-bottom: 6px;
             font-weight: 500;
             border-width: 3px;
             border-image: linear-gradient(to right, #5aa773, #5aa773);
             border-image-slice: 1;
-          }
-          
-          .form__field:focus ~ .form__label {
+        }
+
+        .form__field:focus~.form__label {
             position: absolute;
-            top: 0;
+            top: 0px;
             display: block;
             transition: 0.2s;
             font-size: 15px;
             color: #5aa773;
             font-weight: 700;
-          }
-          
-        
-          .form__field:required, .form__field:invalid {
+        }
+
+
+        .form__field:required,
+        .form__field:invalid {
             box-shadow: none;
-          }
-          .botaofechar{
-            position: relative;
-            bottom: 110px;
-            left: 70%;
+        }
+
+        .botaofechar {
+
             background: none;
             border: none;
             color: #fff;
-          }
-        .botaoAdd{
-            position: relative;
-            top: 25px;
-            left: 60px;
-            color: #9b9b9b;
+        }
+
+        .botaoAdd {
+
+            display: flex;
+            justify-content: flex-end;
+            color: #818181;
             background: none;
             border: none;
         }
-  
-        
+
+        .modalFooter {
+
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .radioPriv {
+            position: relative;
+            top: 5px;
+            right: 3.5rem;
+        }
+
+
+        #DropSubTipos {
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            z-index: 1;
+            display: none;
+        }
+
+        #DropSubTipos a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        #DropSubTipos a:hover {
+            background-color: #ddd;
+        }
+
+        .form__group.field {
+            position: relative;
+        }
+
+        .form__group.field #DropSubTipos {
+            top: 100%;
+            width: 100%;
+        }
+
+        .modaalStatus {
+            display: none;
+            position: fixed;
+            top: 29.3%;
+            left: 47%;
+            transform: translate(-50%, -50%);
+            width: 219px;
+            height: 281px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            z-index: 1;
+            box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
+        }
+
+        .modaal-cimaStatus {
+            background-color: #455a64;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5px;
+            height: 20%;
+        }
     </style>
 </head>
 
@@ -218,9 +444,9 @@
             <h2 class="md-title">Componente de pesquisa.</h2>
             <form name="fruitForm">
                 <md-chips ng-model="ctrl.listaFiltros" name="filtro" ng-click="toggleDropdown()"
-                    md-removable="ctrl.removable" md-max-chips="5" placeholder="Ex. Nome"
+                    md-removable="ctrl.removable" md-max-chips="15" placeholder="Ex. Categoria"
                     input-aria-label="nomes dos filtros">
-                    
+
                     <md-chip-template>
                         <strong>{{$chip.value}}</strong>
                         <em>({{$chip.title}})</em>
@@ -228,35 +454,323 @@
                 </md-chips>
                 <br />
             </form>
-            
-            <div id="myDropdown" class="dropdown"style="display: block;width:30%">
-                <a href="#" ng-click="openModal('Nome')">Nome</a>
-                <a href="#" ng-click="openModal('Sobrenome')">Sobrenome</a>
-                <a href="#" ng-click="openModal('Turno')">Turno</a>
-                <a href="#" ng-click="openModal('Email')">Email</a>
-                <a href="#" ng-click="openModal('Sede')">Sede</a>
-                <a href="#" ng-click="openModal('Status')">Status</a>
-                <a href="#" ng-click="openModal('Cargo')">Cargo</a>
+
+            <div id="myDropdown" class="dropdown" style="display: none; width: 30%">
+                <a href="#" ng-click="openmodaal('mymodaal')">Texto da Questão</a>
+                <a href="#" ng-click="openmodaal('mymodaal2')">Cursos</a>
+                <a href="#" ng-click="openmodaal('mymodaal3')">Categoria</a>
+                <a href="#" ng-click="openmodaal('mymodaal4')">Dificuldade</a>
+                <a href="#" ng-click="openmodaal('mymodaal5')">Tipo da Questão</a>
+                <a href="#" ng-click="openmodaal('mymodaal6')">Data de Criação</a>
+                <a href="#" ng-click="openmodaal('mymodaal7')">Palavras-chave</a>
+                <a href="#" ng-click="openmodaal('mymodaal8')">Fonte</a>
+                <a href="#" ng-click="openPrivacidademodaal()">Privacidade</a>
+                <a href="#" ng-click="openmodaal('mymodaal10')">Status</a>
             </div>
-        
-        <!-- Modal -->
-        <div id="myModal" class="modal">
-            <div class="modal-header">
-                <h2 style="position:relative; bottom:40%; font-size:large" id="modalTitle"></h2>
-            </div>
-            <div class="modal-content">
-                <div class="form__group field">
-                    <input type="input" class="form__field" placeholder="Name" required="" ng-model="pesquisa">
-                    <label for="name" class="form__label">Primeira Letra</label>
-                    <button class="botaofechar" ng-click="closeModal()">x</button>
-                    <button class="botaoAdd" ng-click="addAndClose()">Aplicar</button>
+
+
+            <!-- modaal texto da questao-->
+            <div id="mymodaal" class="modaal">
+
+                <div class="modaal-cima">
+                    <span style="
+                    margin-left: 5px;
+                ">Texto da Questão</span>
+                    <button class="botaofechar" ng-click="closemodaal('mymodaal')">x</button>
+                </div>
+
+                <div class="modaal-conteudo">
+                    <div class="form__group field">
+                        <input type="input" class="form__field" placeholder="Name" required="" ng-model="pesquisa"
+                            style="padding-top: 20px;">
+                        <label for="name" class="form__label">Texto para pesquisa</label>
+                    </div>
+                </div>
+
+                <div class="modalFooter">
+                    <button class="botaoAdd" ng-click="addAndCloseTexto()">Aplicar</button>
                 </div>
             </div>
-        </div>
-          
 
-        
-        
+            <!-- modaal Cursos -->
+            <div id="mymodaal2" class="modaal">
+                <div class="modaal-cima">
+                    <span style="
+                margin-left: 5px;
+            ">Cursos</span>
+                    <button class="botaofechar" ng-click="closemodaal('mymodaal2')">x</button>
+                </div>
+                <div class="modaal-conteudo">
+                    <div class="form__group field">
+                        <!-- Input que abre e fecha o dropdown -->
+                        <input type="input" class="form__field" placeholder="Name" required="" ng-model="pesquisa"
+                            style="padding-top: 20px;">
+                        <label for="name" class="form__label">Escolha um Tipo</label>
+                    </div>
+                </div>
+                <div class="modalFooter">
+                    <button class="botaoAdd" ng-click="addAndCloseCursos()">Aplicar</button>
+                </div>
+            </div>
+
+
+            <!-- modaal Categorias-->
+            <div id="mymodaal3" class="modaalCategoria">
+                <div class="modaal-cimaCategoria">
+                    <span style="margin-left: 5px;">Categoria</span>
+                    <button class="botaofechar" ng-click="closemodaal('mymodaal3')">x</button>
+                </div>
+
+                <div class="modaal-conteudoCategoria">
+                    <div class="form__group field">
+                        <!-- Input que abre e fecha o dropdown do Tipo -->
+                        <input type="input" class="form__field" placeholder="Name" required="" ng-model="Cate"
+                            ng-click="DropDownCategorias()" style="padding-top: 20px;">
+                        <label for="name" class="form__label">Escolha um Tipo</label>
+                        <div id="DropCategoria" class="dropdown"
+                            ng-style="{ 'display': isOpenDropdown ? 'block' : 'none', 'width': '20%' }">
+                            <a href="#" ng-click="setInputValue('Aberta')">Aberta</a>
+                            <a href="#" ng-click="setInputValue('Discursiva')">Discursiva</a>
+                            <a href="#" ng-click="setInputValue('Múltipla Escolha')">Multipla Escolha</a>
+
+                        </div>
+                    </div>
+
+
+                    <div class="form__group field" style="padding-top: 20px;">
+                        <input type="input" class="form__field" placeholder="Name" required="" ng-model="SubTipos"
+                            ng-click="DropDownSubTipos()">
+                        <label for="name" class="form__label">Escolha um Sub-Tipo</label>
+                        <div id="DropSubTipos" class="dropdown"
+                            ng-style="{ 'display': isOpenDropdownSub ? 'block' : 'none', 'width': '20%' }">
+                            <a href="#" ng-click="abc(subtipo)" ng-repeat="subtipo in listaSubtipos">{{subtipo}}</a>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modalFooter">
+                    <button class="botaoAdd" ng-click="addAndCloseCategorias()">Aplicar</button>
+                </div>
+            </div>
+
+            <!-- modaal Dificuldade -->
+            <div id="mymodaal4" class="modaal">
+                <div class="modaal-cima">
+                    <span style="margin-left: 5px;">Dificuldade</span>
+                    <button class="botaofechar" ng-click="closemodaal('mymodaal4')">x</button>
+                </div>
+
+                <div class="modaal-conteudo">
+                    <div class="form__group field">
+                        <label for="dificuldade" style="color: #9b9b9b;">Escolha uma dificuldade:</label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="dificuldade" id="dificuldade1"
+                                ng-model="dificuldade.dificuldade" ng-value="'Fácil'">
+                            <label class="form-check-label" for="dificuldade1">Fácil</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="dificuldade" id="dificuldade2"
+                                ng-model="dificuldade.dificuldade" ng-value="'Médio'">
+                            <label class="form-check-label" for="dificuldade2">Médio</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="dificuldade" id="dificuldade3"
+                                ng-model="dificuldade.dificuldade" ng-value="'Difícil'">
+                            <label class="form-check-label" for="dificuldade3">Difícil</label>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modalFooter">
+                    <button class="botaoAdd" ng-click="addAndCloseDificuldade()">Aplicar</button>
+                </div>
+            </div>
+
+            <!-- modaal Data de Criação-->
+            <div id="mymodaal6" class="modaal">
+                <div class="modaal-cima">
+                    <span style="margin-left: 5px;">Data de Criação</span>
+                    <button id="botaoCloseData" class="botaofechar" ng-click="closemodaal('mymodaal6')">x</button>
+                </div>
+                <div class="modaal-conteudo" style="right: 30px;">
+
+                    <div class="modalInputData">
+                        <div class="form__group field">
+                            <input type="date" id="DataI" class="form__field" placeholder="Name" required=""
+                                uib-datepicker-popup="dd/MM/yyyy" ng-model="dataInicio" style="padding-top: 20px;">
+                            <label for="name" class="form__label">Data de Inicial</label>
+                        </div>
+                        <br>
+                        <div class="form__group field">
+                            <input type="date" id="DataF" class="form__field" placeholder="Name" required=""
+                                uib-datepicker-popup="dd/MM/yyyy" ng-model="dataTermino" style="padding-top: 20px;">
+                            <label for="name" class="form__label">Data de Final</label>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modalFooter">
+                    <button class="botaoAdd" ng-click="addAndCloseData()" style="margin-right: 10px;">Aplicar</button>
+                </div>
+            </div>
+
+            <!-- modaal Tipo da Questão-->
+            <div id="mymodaal5" class="modaal">
+                <div class="modaal-cima">
+                    <span style="margin-left: 5px;">Tipo da Questão</span>
+                    <button class="botaofechar" ng-click="closemodaal('mymodaal5')">x</button>
+                </div>
+                <div class="modaal-conteudoTipo">
+                    <div class="form__group field">
+                        <!-- Input que abre e fecha o dropdown do Tipo -->
+                        <input type="input" class="form__field" placeholder="Name" required="" ng-model="TiposQ"
+                            ng-click="DropDownTipos()" style="padding-top: 20px;">
+                        <label for="name" class="form__label">Escolha um Tipo</label>
+                        <div id="DropTipos" class="dropdown"
+                            ng-style="{ 'display': isOpenDropdown ? 'block' : 'none', 'width': '20%' }">
+                            <a href="#" ng-click="setInputValue('Aberta')">Aberta</a>
+                            <a href="#" ng-click="setInputValue('Discursiva')">Discursiva</a>
+                            <a href="#" ng-click="setInputValue('Múltipla Escolha')">Multipla Escolha</a>
+
+                        </div>
+                    </div>
+
+
+                    <div class="form__group field" style="padding-top: 20px;">
+                        <input type="input" class="form__field" placeholder="Name" required="" ng-model="SubTipos"
+                            ng-click="DropDownSubTipos()">
+                        <label for="name" class="form__label">Escolha um Sub-Tipo</label>
+                        <div id="DropSubTipos" class="dropdown"
+                            ng-style="{ 'display': isOpenDropdownSub ? 'block' : 'none', 'width': '20%' }">
+                            <a href="#" ng-click="abc(subtipo)" ng-repeat="subtipo in listaSubtipos">{{subtipo}}</a>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modalFooter">
+                    <button class="botaoAdd" ng-click="addAndCloseTipo()" style="padding-right: 9px;">Aplicar</button>
+                </div>
+            </div>
+
+            <!-- modaal Palavras-chave-->
+            <div id="mymodaal7" class="modaal">
+                <div class="modaal-cima">
+                    <span style="margin-left: 5px;">Palavras-chave</span>
+                    <button class="botaofechar" ng-click="closemodaal('mymodaal7')">x</button>
+                </div>
+                <div class="modaal-conteudo">
+                    <div class="form__group field">
+                        <input type="input" class="form__field" placeholder="Name" required="" ng-model="pesquisa"
+                            style="padding-top: 20px;">
+                        <label for="name" class="form__label">Primeira Letra</label>
+
+                    </div>
+                </div>
+                <div class="modalFooter">
+                    <button class="botaoAdd" ng-click="addAndClosePalavras()">Aplicar</button>
+                </div>
+            </div>
+
+            <!-- modaal Fonte Fonte-->
+            <div id="mymodaal8" class="modaal">
+                <div class="modaal-cima">
+                    <span style="margin-left: 5px;">Fonte</span>
+                    <button class="botaofechar" ng-click="closemodaal('mymodaal8')">x</button>
+                </div>
+                <div class="modaal-conteudo">
+                    <div class="form__group field">
+                        <input type="input" class="form__field" placeholder="Name" required="" ng-model="pesquisa"
+                            style="padding-top: 20px;">
+                        <label for="name" class="form__label">Primeira Letra</label>
+
+                    </div>
+                </div>
+                <div class="modalFooter">
+                    <button class="botaoAdd" ng-click="addAndCloseFonte()">Aplicar</button>
+                </div>
+            </div>
+
+            <!-- modaal Stattus -->
+
+            <div id="mymodaal10" class="modaalStatus">
+
+                <div class="modaal-cimaStatus">
+                    <span style="margin-left: 5px;">Status</span>
+                    <button class="botaofechar" ng-click="closemodaal('mymodaal10')">x</button>
+                </div>
+
+                <div class="modaal-conteudoStatus">
+                    <div class="form__groupCategoria field">
+                        <label for="categorias" style="color: #9b9b9b;">Escolha uma categoria</label>
+
+                        <div style="display: flex; flex-direction: column;">
+                            <div style="display: flex; align-items: center; margin-bottom:10px;margin-top:10px;">
+                                <input type="checkbox" name="Edição" id="Edição" ng-model="edicao"> <label
+                                    for="Edição">Edição</label>
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom:10px;">
+                                <input type="checkbox" name="Moderação" id="Moderação" ng-model="moderacao"> <label
+                                    for="Moderação">Em Moderação</label>
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom:10px;">
+                                <input type="checkbox" name="analise" id="analise" ng-model="analise"> <label
+                                    for="analise">Em Análise</label>
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom:10px;">
+                                <input type="checkbox" name="Aprovada" id="Aprovada" ng-model="aprovada"> <label
+                                    for="Aprovada">Aprovada</label>
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom:10px;">
+                                <input type="checkbox" name="Cancelada" id="Cancelada" ng-model="cancelada"> <label
+                                    for="Cancelada">Cancelada</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modalFooter">
+                    <button class="botaoAdd" ng-click="addAndCloseStatus()">Aplicar</button>
+                </div>
+            </div>
+
+            <!-- modaal Privacidade-->
+            <div id="mymodaal9" class="modaal">
+                <div class="modaal-cima">
+                    <span style="margin-left: 5px;">Privacidade</span>
+                    <button class="botaofechar" ng-click="closemodaal('mymodaal9')">x</button>
+                </div>
+                <div class="modaal-conteudo">
+                    <label for="privacidade" class="form__label" style="margin-top: 10px;">Selecione a
+                        privacidade:</label>
+                    <div class="form__group field">
+                        <div class="radioPriv">
+                            <div>
+                                <label>
+                                    <input style="margin-left: 3px;" type="radio" name="privacidade" value="Público"
+                                        ng-model="pesquisa">Público
+                                </label>
+                            </div>
+
+                            <div>
+                                <label>
+                                    <input type="radio" name="privacidade" value="Privado" ng-model="pesquisa">Privado
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modalFooter">
+                    <button class="botaoAdd" ng-click="addAndClosePrivacidade()">Aplicar</button>
+                </div>
+        </div>
+
+
     </div>
 
     <script src="/node_modules/angular/angular.js"></script>
@@ -266,30 +780,150 @@
     <script src="/node_modules/angular-material/angular-material.js"></script>
     <script>
 
-        function DemoCtrl($timeout, $q, $log, $scope) {
+        function DemoCtrl($timeout, $q, $log, $scope, $filter) {
             var self = this;
 
             self.readonly = false;
             $scope.isDropdownOpen = false;
-            
+            $scope.isOpenDropdown = false;
+
+            $scope.lastModalID = null;
+
             $scope.pesquisa = null;
 
-            $scope.addAndClose = function() {
-                if ($scope.pesquisa) {
-                    self.listaFiltros.push({title: $scope.title, value: $scope.pesquisa});
-                }
-                $scope.closeModal();
-            };
-            
+            $scope.isOpenDropdownSub = false;
 
-            // Lists of fruit names and Vegetable objects
+            $scope.dataInicio = null;
+
+            $scope.categoriasSelecionadas = [];
+
+            $scope.dataTermino = null;
+
+            function formatarData(data) {
+                return $filter('date')(data, 'dd/MM/yyyy');
+            }
+
+            $scope.addAndCloseTexto = function () {
+                if ($scope.pesquisa) {
+                    self.listaFiltros.push({ title: 'Texto da Questão', value: $scope.pesquisa });
+                }
+                $scope.closemodaal('mymodaal');
+            };
+            $scope.addAndCloseCursos = function () {
+                if ($scope.pesquisa) {
+                    self.listaFiltros.push({ title: 'Cursos', value: $scope.pesquisa });
+                }
+                $scope.closemodaal('mymodaal2');
+            };
+
+            $scope.addAndCloseCategorias = function () {
+                if ($scope.categorias.categoria) {
+                    self.listaFiltros.push({ title: 'Categorias', value: $scope.categorias.categoria });
+
+
+                    $scope.categorias.categoria = null;
+                }
+
+                $scope.closemodaal('mymodaal3');
+            };
+
+
+
+
+            $scope.addAndCloseDificuldade = function () {
+                if ($scope.dificuldade.dificuldade) {
+                    self.listaFiltros.push({ title: 'Dificuldade', value: $scope.dificuldade.dificuldade });
+
+
+                    $scope.dificuldade.dificuldade = null;
+                }
+
+                $scope.closemodaal('mymodaal4');
+            };
+
+            $scope.addAndCloseTipo = function () {
+                if ($scope.TiposQ && $scope.SubTipos) {
+                    self.listaFiltros.push({ title: 'Tipo da Questão', value: `${$scope.TiposQ} - ${$scope.SubTipos}` });
+                }
+                $scope.closemodaal('mymodaal5');
+            };
+
+
+            $scope.addAndCloseData = function () {
+                if ($scope.dataInicio && $scope.dataTermino) {
+
+                    var dataInicioFormatada = $filter('date')($scope.dataInicio, 'dd/MM/yyyy');
+                    var dataTerminoFormatada = $filter('date')($scope.dataTermino, 'dd/MM/yyyy');
+
+                    self.listaFiltros.push({ title: 'Data de criação', value: `${dataInicioFormatada} á ${dataTerminoFormatada}` });
+
+                }
+                $scope.closemodaal('mymodaal6');
+            };
+
+
+
+            $scope.addAndClosePalavras = function () {
+                if ($scope.pesquisa) {
+                    self.listaFiltros.push({ title: 'Palavras-chave', value: $scope.pesquisa });
+                }
+                $scope.closemodaal('mymodaal7');
+            };
+
+            $scope.addAndCloseFonte = function () {
+                if ($scope.pesquisa) {
+                    self.listaFiltros.push({ title: 'Fonte', value: $scope.pesquisa });
+                }
+                $scope.closemodaal('mymodaal8');
+            };
+
+            $scope.addAndClosePrivacidade = function () {
+                if ($scope.pesquisa) {
+                    self.listaFiltros.push({ title: 'Privacidade', value: $scope.pesquisa });
+                }
+                $scope.closemodaal('mymodaal9');
+            };
+
+            $scope.addAndCloseStatus = function () {
+                $scope.statusSelecionados = [];
+
+
+                if ($scope.edicao) {
+                    $scope.statusSelecionados.push('Edição');
+                }
+                if ($scope.moderacao) {
+                    $scope.statusSelecionados.push('Em Moderação');
+                }
+                if ($scope.analise) {
+                    $scope.statusSelecionados.push('Em Análise');
+                }
+                if ($scope.aprovada) {
+                    $scope.statusSelecionados.push('Aprovada');
+                }
+                if ($scope.cancelada) {
+                    $scope.statusSelecionados.push('Cancelada');
+                }
+
+                if ($scope.statusSelecionados.length > 0) {
+                    self.listaFiltros.push({ title: 'Status', value: $scope.statusSelecionados.join() });
+                }
+
+
+                $scope.closemodaal('mymodaal10');
+            };
+
+
+
+
+
+
             self.nomesFiltros = [];
             self.ngChangenomesFiltros = angular.copy(self.nomesFiltros);
             self.listaFiltros = angular.copy(self.nomesFiltros);
             self.editablenomesFiltros = angular.copy(self.nomesFiltros);
 
             self.tags = [];
-           
+
 
             self.newVeg = function (chip) {
                 return {
@@ -301,16 +935,16 @@
             self.onModelChange = function (newModel) {
                 $log.log('The model has changed to ' + newModel + '.');
             };
-            
+
             function myFunction() {
                 $('#myDropdown').toggleClass('show');
-              }
-              
-              self.toggleDropdown = function () {
+            }
+
+            self.toggleDropdown = function () {
                 self.isDropdownOpen = !self.isDropdownOpen;
             };
-            
-              $scope.toggleDropdown = function () {
+
+            $scope.toggleDropdown = function () {
                 var dropdown = document.getElementById("myDropdown");
                 if (dropdown.style.display === "block") {
                     dropdown.style.display = "none";
@@ -318,38 +952,102 @@
                     dropdown.style.display = "block";
                 }
             }
-            $scope.openModal = function (title) {
-                var modal = document.getElementById("myModal");
-                var modalTitle = document.getElementById("modalTitle");
-                modal.style.display = "block";
-                modalTitle.textContent = title;
-                $scope.pesquisa = ""; 
-                $scope.title = title;
-            }
-            
-            
-            $scope.closeModal = function() {
-                var modal = document.getElementById("myModal");
-                modal.style.display = "none";
-                $scope.pesquisa = ""; 
-            }
-            
-       
-            window.onclick = function(event) {
-                var modal = document.getElementById("myModal");
-                if (event.target == modal) {
-                    modal.style.display = "none";
+
+
+            $scope.DropTipos = function () {
+                var dropdown = document.getElementById("cursosDropDown");
+                if (dropdown.style.display === "block") {
+                    dropdown.style.display = "none";
+                } else {
+                    dropdown.style.display = "block";
                 }
             }
-            
+
+            $scope.DropDownTipos = function () {
+                $scope.isOpenDropdown = !$scope.isOpenDropdown;
+                $scope.isOpenDropdownSub = !$scope.isOpenDropdownSub;
+            };
+
+            $scope.DropDownCategorias = function () {
+                $scope.isOpenDropdown = !$scope.isOpenDropdown;
+                $scope.isOpenDropdownSub = !$scope.isOpenDropdownSub;
+            };
+
+            $scope.listaTipoSubtipos = {
+                "Aberta": ["Alternativas Constantes", "Associação", "Interpretação", "Lacuna", "Ordenação", "Resposta Única"],
+                "Discursiva": ["Argumentativa", "Descritiva", "Narrativa"],
+                "Múltipla Escolha": ["Afirmação Inconpleta", "Alternativas Constantes", "Asserção e Razão", "Associação", "Foco Negativo", "Interpretação", "Lacuna", "Ordenação", "Resposta Múltipla", "Resposta Única"]
+            }
+
+            $scope.listaSubtipos = [];
+
+            $scope.abc = function (subtipo) {
+                $scope.SubTipos = subtipo;
+                $scope.isOpenDropdownSub = !$scope.isOpenDropdownSub;
+
+                console.log(subtipo);
+                console.log($scope.SubTipos);
+            }
+
+            $scope.toggleDropdownSub = function () {
+                $scope.isOpenDropdownSub = !$scope.isOpenDropdownSub;
+
+            };
+
+            $scope.DropDownSubTipos = function () {
+                $scope.isOpenDropdownSub = !$scope.isOpenDropdownSub;
+            };
+
+            $scope.setInputValue = function (value) {
+                $scope.TiposQ = value;
+                $scope.listaSubtipos = $scope.listaTipoSubtipos[value]
+                $scope.isOpenDropdown = !$scope.isOpenDropdown;
+                console.log($scope.TiposQ)
+            }
+
+            $scope.openPrivacidademodaal = () => {
+
+                if (self.listaFiltros.find(filtro => filtro.title == "Privacidade") != undefined) return;
+
+                $scope.openmodaal('mymodaal9');
+
+            }
+
+            $scope.openmodaal = function (id) {
+
+                if ($scope.lastModalID != id) $scope.closemodaal($scope.lastModalID);
+                $scope.lastModalID = id;
+
+                var modaal = document.getElementById(id);
+                var modaalTitle = document.getElementById("modaalTitle");
+                modaal.style.display = "block";
+
+                $scope.pesquisa = "";
+
+            }
+
+            $scope.closemodaal = function (id) {
+                var modaal = document.getElementById(id);
+                if (modaal) {
+                    modaal.style.display = "none";
+                    $scope.pesquisa = "";
+                }
+            }
+
+
+
+            window.onclick = function (event) {
+                var modaal = document.getElementById("mymodaal");
+                if (event.target == modaal) {
+                    modaal.style.display = "none";
+                }
+            }
+
         }
 
         // Include app dependency on ngMaterial
         angular.module('YourApp', ['ngMaterial', 'ngMessages'])
             .controller("BasicDemoCtrl", DemoCtrl);
-
-
-
     </script>
 </body>
 
